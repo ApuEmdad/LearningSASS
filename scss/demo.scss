@@ -1,0 +1,76 @@
+/* browser reset code */
+@forward "../scss/base/index";
+@use "../scss/util/index.scss" as variables;
+
+header
+{
+background-color: variables.$header-bgcolor;
+}
+
+main{
+    background-color: variables.$main-bgcolor;
+}
+
+footer{
+    background-color: variables.$footer-bgcolor
+}
+
+#about p {
+    font-size: variables.$para-fonts;
+}
+
+
+// nav styling
+nav {
+    margin-top: 15px;
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        margin: 0 15px;
+  
+        a {
+          display: inline-block;
+          color: white;
+          text-decoration: none;
+          padding: 10px;
+          transition: 0.4s;
+          border-radius: 5px;
+        //   @include setFontSize(large);
+        }
+        a:hover {
+          background: #000;
+        }
+      }
+    }
+  }
+
+  @mixin para-style($size, $style) {
+    font-size: $size;
+    text-align: $style;
+    margin: 10px 0;
+    background: red;
+  }
+
+  #education p{
+    @include para-style(18, justify )
+  }
+
+
+  .btn {
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-download {
+    @extend .btn;
+    background-color: red;
+  }
+  
+  .learn-more {
+    @extend .btn;
+    background: green;
+  }
